@@ -1,0 +1,102 @@
+[
+ {
+  "idx": "webquery-test-1",
+  "doc": "how to open a text file on python",
+  "code": "def get_file_string(filepath):     \"\"\"Get string from file.\"\"\"     with open(os.path.abspath(filepath)) as f:         return f.read()"
+ },
+ {
+  "idx": "webquery-test-2",
+  "doc": "how to open a text file on python",
+  "code": "def file_read(filename):     \"\"\"Read a file and close it.  Returns the file source.\"\"\"     fobj = open(filename,'r');     source = fobj.read();     fobj.close()     return source"
+ },
+ {
+  "idx": "webquery-test-3",
+  "doc": "how to get count of rows in excel sheet python",
+  "code": "def series_table_row_offset(self, series):         \"\"\"         Return the number of rows preceding the data table for *series* in         the Excel worksheet.         \"\"\"         title_and_spacer_rows = series.index * 2         data_point_rows = series.data_point_offset         return title_and_spacer_rows + data_point_rows"
+ },
+ {
+  "idx": "webquery-test-4",
+  "doc": "how to get count of rows in excel sheet python",
+  "code": "def y_values_ref(self, series):         \"\"\"         The Excel worksheet reference to the Y values for this chart (not         including the column label).         \"\"\"         top_row = self.series_table_row_offset(series) + 2         bottom_row = top_row + len(series) - 1         return \"Sheet1!$B$%d:$B$%d\" % (top_row, bottom_row)"
+ },
+ {
+  "idx": "webquery-test-5",
+  "doc": "python list delete elelment contain character",
+  "code": "def clean(self, text):         \"\"\"Remove all unwanted characters from text.\"\"\"         return ''.join([c for c in text if c in self.alphabet])"
+ },
+ {
+  "idx": "webquery-test-6",
+  "doc": "python list delete elelment contain character",
+  "code": "def is_break_tag(self, el):         \"\"\"Check if tag is an element we should break on.\"\"\"          name = el.name         return name in self.break_tags or name in self.user_break_tags"
+ },
+ {
+  "idx": "webquery-test-7",
+  "doc": "remove all non numeric characters python",
+  "code": "def _remove_invalid_char(s):     \"\"\"Remove invalid and dangerous characters from a string.\"\"\"      s = ''.join([i if ord(i) >= 32 and ord(i) < 127 else '' for i in s])     s = s.translate(dict.fromkeys(map(ord, \"_%~#\\\\{}\\\":\")))     return s"
+ },
+ {
+  "idx": "webquery-test-8",
+  "doc": "remove all non numeric characters python",
+  "code": "def clean_text(text):     \"\"\"Clean text before parsing.\"\"\"     # Replace a few nasty unicode characters with their ASCII equivalent     maps = {u'\u00d7': u'x', u'\u2013': u'-', u'\u2212': '-'}     for element in maps:         text = text.replace(element, maps[element])      # Replace genitives     text = re.sub(r'(?<=\\w)\\'s\\b|(?<=\\w)s\\'(?!\\w)', '  ', text)      logging.debug(u'Clean text: \"%s\"', text)      return text"
+ },
+ {
+  "idx": "webquery-test-9",
+  "doc": "python recieve push notifications",
+  "code": "def notify(self, msgtype, method, params):         \"\"\"Handle an incoming notify request.\"\"\"         self.dispatch.call(method, params)"
+ },
+ {
+  "idx": "webquery-test-10",
+  "doc": "python recieve push notifications",
+  "code": "def write(self, data):         \"\"\"         Write the given data to the file.         \"\"\"                  # Do the write         self.backingStream.write(data)                  for listener in self.writeListeners:             # Send out notifications             listener(len(data))"
+ },
+ {
+  "idx": "webquery-test-11",
+  "doc": "python git get latest commit",
+  "code": "def latest_commit(self) -> git.Commit:         \"\"\"         :return: latest commit         :rtype: git.Commit object         \"\"\"         latest_commit: git.Commit = self.repo.head.commit         LOGGER.debug('latest commit: %s', latest_commit)         return latest_commit"
+ },
+ {
+  "idx": "webquery-test-12",
+  "doc": "python git get latest commit",
+  "code": "def get_last_commit_line(git_path=None):     \"\"\"     Get one-line description of HEAD commit for repository in current dir.     \"\"\"     if git_path is None: git_path = GIT_PATH     output = check_output([git_path, \"log\", \"--pretty=format:'%ad %h %s'\",                            \"--date=short\", \"-n1\"])     return output.strip()[1:-1]"
+ },
+ {
+  "idx": "webquery-test-13",
+  "doc": "can you remove letters in strings in python",
+  "code": "def clean(self, text):         \"\"\"Remove all unwanted characters from text.\"\"\"         return ''.join([c for c in text if c in self.alphabet])"
+ },
+ {
+  "idx": "webquery-test-14",
+  "doc": "can you remove letters in strings in python",
+  "code": "def strip_accents(s):     \"\"\"     Strip accents to prepare for slugification.     \"\"\"     nfkd = unicodedata.normalize('NFKD', unicode(s))     return u''.join(ch for ch in nfkd if not unicodedata.combining(ch))"
+ },
+ {
+  "idx": "webquery-test-15",
+  "doc": "how to make word into letter by letter in python",
+  "code": "def casefold_with_i_dots(text):     \"\"\"     Convert capital I's and capital dotted \u0130's to lowercase in the way     that's appropriate for Turkish and related languages, then case-fold     the rest of the letters.     \"\"\"     text = unicodedata.normalize('NFC', text).replace('\u0130', 'i').replace('I', '\u0131')     return text.casefold()"
+ },
+ {
+  "idx": "webquery-test-16",
+  "doc": "how to make word into letter by letter in python",
+  "code": "def clean(self, text):         \"\"\"Remove all unwanted characters from text.\"\"\"         return ''.join([c for c in text if c in self.alphabet])"
+ },
+ {
+  "idx": "webquery-test-17",
+  "doc": "python src folder convention",
+  "code": "def examples(directory):     \"\"\"     Generate example strategies to target folder     \"\"\"     source_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), \"examples\")      try:         shutil.copytree(source_dir, os.path.join(directory, \"examples\"))     except OSError as e:         if e.errno == errno.EEXIST:             six.print_(\"Folder examples is exists.\")"
+ },
+ {
+  "idx": "webquery-test-18",
+  "doc": "python src folder convention",
+  "code": "def normalize_path(filename):     \"\"\"Normalize a file/dir name for comparison purposes\"\"\"     return os.path.normcase(os.path.realpath(os.path.normpath(_cygwin_patch(filename))))"
+ },
+ {
+  "idx": "webquery-test-19",
+  "doc": "how to navigate folders in python",
+  "code": "def listfolder(p):     \"\"\"     generator of list folder in the path.     folders only     \"\"\"     for entry in scandir.scandir(p):         if entry.is_dir():             yield entry.name"
+ },
+ {
+  "idx": "webquery-test-20",
+  "doc": "how to navigate folders in python",
+  "code": "def get_all_files(folder):     \"\"\"     Generator that loops through all absolute paths of the files within folder      Parameters     ----------     folder: str     Root folder start point for recursive search.      Yields     ------     fpath: str     Absolute path of one file in the folders     \"\"\"     for path, dirlist, filelist in os.walk(folder):         for fn in filelist:             yield op.join(path, fn)"
+ }
+]

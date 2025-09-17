@@ -1,0 +1,42 @@
+pylint
+# openai == 0.28
+openai == 1.23.6
+# textgrad 0.1.5 depends on openai>=1.23.6
+httpx==0.27.2
+torch
+hydra-core
+transformers
+transformers_stream_generator
+pandas
+psutil
+fastchat
+accelerate
+alpaca_eval
+nltk
+sentencepiece
+protobuf
+fschat
+numpy
+tqdm
+accelerate
+langcodes
+backoff
+tiktoken
+shortuuid
+evaluate
+bleurt_pytorch
+datasets
+jieba
+matplotlib
+Cython
+Pillow==9.4.0
+sacrebleu
+sentence-transformers
+networkx
+translate
+art
+textgrad
+together
+loguru
+ijson
+tree_sitter==0.23

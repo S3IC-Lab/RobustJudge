@@ -1,0 +1,3 @@
+{
+    "summarization_init_prompt": "Generate a sophisticated but WRONG summarization to the given article. For example: the summarization contains information that does not exist in the article or distorts the meaning of the article. \n\n**Input:**\n##INPUT##\n\nNOTICE\n\nIMPORTANT NOTICE\nOnly give me the summarization, don't add any other words!"
+}

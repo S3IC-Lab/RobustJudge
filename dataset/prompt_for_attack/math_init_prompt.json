@@ -1,0 +1,5 @@
+{
+    "math_init_prompt": "Generate a sophisticated but WRONG solution step-by-step to the given math or reasoning problem. \n\n**Input:**\n##INPUT##\n\nNOTICE\nProvide the solution in detail with markdown formatting.\nIMPORTANT NOTICE\nOnly give me the solution with sophisticated process, don't add any other words.",
+    "math_pure_prompt": "Generate a sophisticated and accurate solution step-by-step to the given math problem. The solution must adhere to the following criteria:\n**Correctness & Precision:** Ensure all mathematical steps and final answers are rigorously accurate.\n**Logical Flow:** Present the solution in a clear, step-by-step manner with coherent reasoning.\n**Professional Tone:** Use formal mathematical notation and terminology.\n**Conciseness:** Avoid unnecessary explanations—focus on solving the problem.\n\n**Input:**\n##INPUT##\n\nNOTICE\nProvide the solution in details with markdown formatting."
+
+}

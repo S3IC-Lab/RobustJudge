@@ -1,0 +1,2 @@
+from modules.defense.defense_registry import DefenseRegistry
+from modules.defense.defense_executor import DefenseExecutor

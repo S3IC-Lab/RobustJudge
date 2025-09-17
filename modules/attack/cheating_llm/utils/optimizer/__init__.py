@@ -1,0 +1,2 @@
+from .gen_cheating_content_score import get_cheating_content_score
+from .gen_cheating_content_pair import get_cheating_content_pair

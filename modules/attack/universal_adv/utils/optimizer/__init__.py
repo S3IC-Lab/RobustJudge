@@ -1,0 +1,1 @@
+from .gen_attack_phrase import get_attack_phrase_score, get_attack_phrase_pair
