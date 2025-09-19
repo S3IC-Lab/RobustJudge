@@ -26,9 +26,7 @@ from modules.attack.manual_prompt_injection import (
     SummarizationFakeReasoning, SummarizationFakeCompletion,
     SummarizationEmptyAttack
 )
-from modules.attack.prompt_optimization import (
-TranslationPromptOptimization
-)
+
 from modules.attack.plain import (
     TranslationPlain, CodePlain, MathPlain, KnowledgePlain, SummarizationPlain
 )
@@ -39,17 +37,7 @@ from modules.attack.cheating_llm import (
     TranslationCheatingAttack, SummarizationCheatingAttack, CodeCheatingAttack,
     KnowledgeCheatingAttack, MathCheatingAttack
 )
-from modules.attack.jailbreak import (
-    TranslationGCGAttack, KnowledgeGCGAttack, MathGCGAttack,
-    SummarizationGCGAttack, CodeGCGAttack,
 
-    TranslationAutoDANAttack, KnowledgeAutoDANAttack,
-    MathAutoDANAttack, SummarizationAutoDANAttack, CodeAutoDANAttack,
-
-    TranslationPairAttack, SummarizationPairAttack, CodePairAttack,
-
-    TranslationTapAttack, SummarizationTapAttack, CodeTapAttack
-)
 from modules.attack.universal_adv import (
     TranslationUniAttack, CodeUniAttack, 
     MathUniAttack, KnowledgeUniAttack, SummarizationUniAttack
@@ -163,8 +151,6 @@ AttackRegistry.register("summarization", "completion")(SummarizationFakeCompleti
 AttackRegistry.register("summarization", "empty")(SummarizationEmptyAttack)
 
 
-# ==================== Register prompt optimization method here ====================#
-AttackRegistry.register("translation", "naive_po")(TranslationPromptOptimization)
 
 # ==================== Register adv method here ====================#
 AttackRegistry.register("translation", "adv")(TranslationAdvEvalAttack)
@@ -183,39 +169,6 @@ AttackRegistry.register("math", "cheating")(MathCheatingAttack)
 AttackRegistry.register("reasoning", "cheating")(MathCheatingAttack)
 AttackRegistry.register("knowledge", "cheating")(KnowledgeCheatingAttack)
 
-# ==================== Register jailbreak: gcg_attack method here ====================#
-AttackRegistry.register("translation", "gcg")(TranslationGCGAttack)
-AttackRegistry.register("knowledge", "gcg")(KnowledgeGCGAttack)
-AttackRegistry.register("reasoning", "gcg")(MathGCGAttack)
-AttackRegistry.register("math", "gcg")(MathGCGAttack)
-AttackRegistry.register("summarization", "gcg")(SummarizationGCGAttack)
-AttackRegistry.register("code_generation", "gcg")(CodeGCGAttack)
-AttackRegistry.register("code_summarization", "gcg")(CodeGCGAttack)
-AttackRegistry.register("code_translation", "gcg")(CodeGCGAttack)
-
-# ==================== Register jailbreak: autodan_attack here ====================#
-AttackRegistry.register("translation", "autodan")(TranslationAutoDANAttack)
-AttackRegistry.register("knowledge", "autodan")(KnowledgeAutoDANAttack)
-AttackRegistry.register("reasoning", "autodan")(MathAutoDANAttack)
-AttackRegistry.register("math", "autodan")(MathAutoDANAttack)
-AttackRegistry.register("summarization", "autodan")(SummarizationAutoDANAttack)
-AttackRegistry.register("code_generation", "autodan")(CodeAutoDANAttack)
-AttackRegistry.register("code_summarization", "autodan")(CodeAutoDANAttack)
-AttackRegistry.register("code_translation", "autodan")(CodeAutoDANAttack)
-
-# ==================== Register jailbreak: pair_attack here ====================#
-AttackRegistry.register("translation", "pair")(TranslationPairAttack)
-AttackRegistry.register("summarization", "pair")(SummarizationPairAttack)
-AttackRegistry.register("code_generation", "pair")(CodePairAttack)
-AttackRegistry.register("code_summarization", "pair")(CodePairAttack)
-AttackRegistry.register("code_translation", "pair")(CodePairAttack)
-
-# ==================== Register jailbreak: tap_attack here ====================#
-AttackRegistry.register("translation", "tap")(TranslationTapAttack)
-AttackRegistry.register("summarization", "tap")(SummarizationTapAttack)
-AttackRegistry.register("code_generation", "tap")(CodeTapAttack)
-AttackRegistry.register("code_summarization", "tap")(CodeTapAttack)
-AttackRegistry.register("code_translation", "tap")(CodeTapAttack)
 
 # ==================== Register uni_adv_attack method here ====================#
 AttackRegistry.register("translation", "uni")(TranslationUniAttack)

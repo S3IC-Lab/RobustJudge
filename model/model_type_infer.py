@@ -4,10 +4,8 @@ from pathlib import Path
 MODEL_TYPE_RULES = {
     "gpt-4o-2024-11-20": "close",
     "claude-3-opus": "close",
-    
     "gpt-4*": "close",  
     "claude-*": "close",    
-    
     "vicuna-*": "open",   
     "Qwen-*-Chat": "open",  
     "Meta-Llama-3-*-Instruct": "open",
@@ -30,7 +28,6 @@ MODEL_TYPE_RULES = {
     "PandaLM-7B-v1": "open",
     "autoj-13b": "open",
     "deepseek-ai/DeepSeek-R1":"together"
-
 }
 
 def infer_model_type(model_id: str) -> str:

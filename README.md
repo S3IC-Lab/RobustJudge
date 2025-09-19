@@ -10,6 +10,8 @@ This repository provides the official codebase for the paper "LLMs Cannot Reliab
 conda create --name robustjudge python=3.10
 conda activate robustjudge
 pip install -r requirements.txt
+export OPENAI_API_KEY="..."
+
 ```
 
 ## 💻 Usage examples
