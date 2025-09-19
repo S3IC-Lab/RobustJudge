@@ -9,7 +9,6 @@ from modules.eval import EvaluatorRegistry, evaluator_list
 from modules.attack import AttackExecutor
 from modules.defense import DefenseExecutor
 from judge.pipeline import Pipe
-# from modules.attack.tg_opt import TgAttacker
 from modules.data import lan_flores_dict
 def pick_evaluator(target_instance, args):
     if args.task in evaluator_list:
@@ -18,10 +17,7 @@ def pick_evaluator(target_instance, args):
         raise ValueError(f"There is no suitable benchmark_evaluator for {args.task} task.")
 
 def main(args):
-
     dataset_specific_params = {"num_objects": args.num_items}
-
-    # dataset_specific_params = {"num_objects": args.dataset_objects}
     source_lan_code = lan_flores_dict(args.source)
     target_lan_code = lan_flores_dict(args.target)
     if args.dataset == "flores200":
@@ -38,7 +34,6 @@ def main(args):
     dataset.load_data()
     dataset.process_data()
     
-    #=================== LOAD MODEL ===================#
     target_instance = load_model_instance(
         args,
         args.target_model,
@@ -56,7 +51,6 @@ def main(args):
     
     bench_evaluator = pick_evaluator(target_instance, args)
     
-    #=================== PIPELINE ===================#
     attacker = AttackExecutor(bench_evaluator, attack_instance, target_instance, args).create()
     defender = DefenseExecutor(attack_instance, target_instance, args).create()
     from loguru import logger
@@ -93,19 +87,14 @@ if __name__ == '__main__':
     )
     parser.add_argument(
         "--attack-model",type=str,default="/home/model/openchat-3.5-0106",help="attack model path"
-        # /home/model/openchat-3.5-0106
-        # /home/model/Meta-Llama-3-8B-Instruct
     )
     parser.add_argument(
         "--attack-model-id", type=str, default="openchat-3.5-0106"
-        # Meta-Llama-3-8B-Instruct
-        # openchat-3.5-0106
     )
     parser.add_argument(
         "--attack-model-temperature",type=float,default=0.3
     )
     
-    # =================== MODEL CONFIG ===================
     parser.add_argument(
         "--max-new-token",
         type=int,
@@ -146,7 +135,6 @@ if __name__ == '__main__':
         help="The model revision to load.",
     )
 
-    # =================== DATA CONFIG ===================
     parser.add_argument(
         "--cache",type=str,default="en2zh.json"
     )
@@ -188,7 +176,6 @@ if __name__ == '__main__':
         "--dataset-objects",type = int, default=10, help = "numbers of dataset"
     )
 
-    # =================== Translation task config ===================
     parser.add_argument(
         "--source", type=str, default="Chinese"
     )
