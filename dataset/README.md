@@ -1,5 +1,35 @@
 Here are the datasets needed(.json).
 # Dataset
+
+You can choose the task type from: `[translation | math | reasoning | code_translation | code_generation | code_summarization | knowledge | summarization]`, and here is a table shows the match of datasets and tasks</br>
+
+| `--task` | `--dataset` | `--data_dir` |
+| ---  | --- | --- |
+| `translation`  | `flores200` | `/dataset/flores200/dev` |
+| `code_translation`  | `code2code` | `dataset/code_task/code2code/multilingual_train.json` |
+| `code_generation`  | `text2code` | `dataset/code_task/text2code/test_webquery.json` |
+| `code_summarization`  | `code2text` | `dataset/code_task/code2text/code_to_text.json` |
+| `math`  | `livebench-math` | `dataset/math_task/livebench-math.json` |
+| `reasoning`  | `livebench-reasoning` | `dataset/math_task/livebench-reasoning.json` |
+| `knowledge`  | `mmlu-knowledge` | `dataset/knowledge_task/mmlu-knowledge.json` |
+| `summarization`  | `cnn_dailymail` | `dataset/summarization_task/cnn_dailymail.json` |
+
+### 2.2 Standard for datasets
+- `code2code`
+- `code2text`
+- `text2code`
+- `livebench_math`
+- `livebench_reasoning`
+- `knowledge_task`
+- `summarization`
+#### Translation
+- `chinese2english`
+- `english2chinese`
+- `english2german`
+- `german2english`
+- `english2youruba`
+- `youruba2english`
+
 ## 0. Cache
 This `/dataset/cache` dir is used to save the model-generated answers, which can speed up the experiments if the same attack_model is used in different attack methods. The caching has been automatically done by the pipeline so there is no extra cmd for it.
 ## 1. Prompt template

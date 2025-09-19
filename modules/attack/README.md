@@ -1,4 +1,10 @@
 ## Attack
+You can choose the attack method from: `[none | naive | ignore | combined | escape | reasoning | completion | empty | adv | cheating | uni | gcg | autodan | pair | tap]`, the default option is `[none]`, which means no attack method is added into the pipeline. </br>
+**NOTE**: Attack method: `adv | pair | tap` does not support task: `[math | reasoning | knowledge]`
+
+3. You can choose the judge method from: `[score | pairwise]` to start your experiments.
+
+4. Run the experiment using the bash.generate.sh file. I’ve included specific examples and notes in the file’s comments,following the steps to run it.
 ### 1. How to contribute
 1. Registry
 Add your attack-name in your `modules/attack/attack_registry.py`, For example:

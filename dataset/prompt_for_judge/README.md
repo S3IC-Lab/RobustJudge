@@ -1,0 +1,11 @@
+#### Standard for judge prompt
+- `normal`(both pairwise and score on all tasks)
+- `vanilla`(only pairwise and score on translation task)
+- `hard ` (only pairwise on translation task)
+- `google-vertex` (only pairwise on translation task)
+- `pandaLM` (unspported)
+- `prometheus-2` (unspported)
+- `judgeLM` (unspported)
+- `auto-j` (unspported)
+- `skywork` (unspported)
+- `chatEval` (unspported)

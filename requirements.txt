@@ -1,7 +1,5 @@
 pylint
-# openai == 0.28
 openai == 1.23.6
-# textgrad 0.1.5 depends on openai>=1.23.6
 httpx==0.27.2
 torch
 hydra-core
