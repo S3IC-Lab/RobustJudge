@@ -10,6 +10,9 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import tiktoken
 from transformers import AutoTokenizer
 import tiktoken
+import os
+from openai import OpenAI
+import openai
 
 def get_compatible_tokenizer(model_name: str):
     """
@@ -78,9 +81,9 @@ class ClosedSourceModel(BaseModel):
         self.max_token = max_token
         self.tokenizer = get_compatible_tokenizer(model_id)
 
-        self.base_url=""
-        self.api_key=""
-        
+        self.base_url = os.getenv("OPENAI_BASE_URL")
+        self.api_key = os.getenv("OPENAI_API_KEY")
+
     def model_generate(self, prompt):
         return api_generate(
             prompt,
@@ -128,8 +131,11 @@ class TogetherAiModel(BaseModel):
         self.tokenizer = get_compatible_tokenizer(model_id)
         self.temperature = temperature
         self.max_token = max_token
-        self.base_url = ""
-        self.api_key = ""
+        # self.base_url = ""
+        # self.api_key = ""
+        self.base_url = "https://api.together.xyz/v1"
+        self.api_key = os.getenv("TOGETHER_API_KEY")
+
     def model_generate(self, prompt):
         return api_generate(
             prompt,
